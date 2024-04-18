@@ -8,7 +8,7 @@ function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionInd
 
   return (
     <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">{questionSet[currentQuestionSetIndex].questions[currentQuestionIndex]}</h2>
+      <h2 className="text-2xl font-bold mb-4">{questionSet[currentQuestionSetIndex].questions[currentQuestionIndex].text}</h2>
       
       
       <div>

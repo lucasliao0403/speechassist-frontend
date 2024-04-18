@@ -132,7 +132,7 @@ export default function Home() {
   return (
     <div className="flex flex-row justify-center">
       <div className=" flex justify-center mt-8">
-        {pageNum==0 && <div className="text-black font-bold p-8 h-full flex flex-col justify-center align-center mt-16 mx-16">
+        {pageNum==0 && <div className="text-black font-bold p-8 h-full flex flex-col justify-center align-center mt-16 mx-16 max-w-[60vw]">
             <div className="flex flex-row gap-16"> 
               <div>
                 <h1 className="text-left text-6xl mb-2"> Welcome to <br/> <span className="text-pink-400">SpeechAssist!</span></h1>
@@ -178,7 +178,7 @@ export default function Home() {
           {pageNum==2 && 
         <div>
           <div>
-            {questionSet[currentQuestionSetIndex].questions[currentQuestionIndex]}
+            {questionSet[currentQuestionSetIndex].questions[currentQuestionIndex].text}
           </div>
           <Webcam/>
           <button onClick={toggleRecording} className="bg-red-400 text-white py-2 px-4 rounded-xl hover:bg-red-300">
