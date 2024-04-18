@@ -17,7 +17,7 @@ export default function QuestionSelect({currentQuestionSetIndex, setCurrentQuest
 }
 
 function QuestionCard({questionGroup, setCurrentQuestionSetIndex, currentQuestionSetIndex}) {
-    let styles = "drop-shadow-md bg-blue-100 rounded-xl p-4 flex justify-center items-center hover:cursor-pointer hover:bg-blue-200 "
+    let styles = "drop-shadow-md bg-slate-100 rounded-xl p-4 flex justify-center items-center hover:cursor-pointer hover:bg-blue-200 "
     if(questionGroup.index === currentQuestionSetIndex) {
         styles += " border-pink-400 border-solid border-4"
     }
