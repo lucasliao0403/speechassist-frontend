@@ -159,7 +159,7 @@ export default function Home() {
         
         {pageNum==1 && 
         <div>
-          <div>
+          <div className="max-w-[40vw] text-wrap text-xl font-bold m-2">
             {questionSet[currentQuestionSetIndex].questions[currentQuestionIndex].text}
           </div>
           <div>
@@ -177,7 +177,7 @@ export default function Home() {
 
           {pageNum==2 && 
         <div>
-          <div>
+          <div className="max-w-[40vw] text-wrap text-xl font-bold m-2">
             {questionSet[currentQuestionSetIndex].questions[currentQuestionIndex].text}
           </div>
           <Webcam/>

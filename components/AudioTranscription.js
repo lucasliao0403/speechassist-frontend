@@ -24,7 +24,7 @@ function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionInd
        
         
       </div>
-      <GPTResponse transcript={transcription} prompt={questionSet[currentQuestionSetIndex].questions[currentQuestionIndex]}/>
+      <GPTResponse transcript={transcription} prompt={questionSet[currentQuestionSetIndex].questions[currentQuestionIndex].text}/>
     </div>
   );
 }
