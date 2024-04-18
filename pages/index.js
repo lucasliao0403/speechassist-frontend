@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import AudioRecorder from "@/components/AudioRecorder";
 import {useState, useRef} from 'react'
 import Webcam from "react-webcam";
+import AudioTranscription from './AudioTranscription'; 
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,17 +36,21 @@ export default function Home() {
   const webRef = useRef(null)
   return (
     <div className="">
-        <h1>React Media Recorder</h1>
-        
-        <div className="flex flex-row justify-center">
-          <AudioRecorder />
+        {/* <h1>React Media Recorder</h1> */}
+
+        <header className="App-header">
+          <h1>Whisper Transcription Example</h1>
+          <AudioTranscription />
+        </header>
+
+        {/* <div className="flex flex-row justify-center">
           <Webcam ref={webRef} videoConstraints={videoConstraints} />;
           {!permission ? (
               <button onClick={getCameraPermission} type="button">
                   Get Camera
               </button>
           ):null}
-        </div>
+        </div> */}
     </div>
   );
 }
