@@ -1,21 +1,24 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import GPTResponse from './GPTResponse.js';
+import {questionSet} from '@/assets/data.js'
 
-function AudioTranscription({prompt}) {
+function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionIndex, currentQuestionSetIndex, setCurrentQuestionSetIndex}) {
   const [recording, setRecording] = useState(false);
   const [audioBlob, setAudioBlob] = useState(null);
   const [transcription, setTranscription] = useState('');
   const [error, setError] = useState('');
-  const [questions, setQuestions] = useState(["What is your name?", "Describe your previous job experience.", "Where do you see yourself in 5 years?"]);
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  
+  console.log(currentQuestionIndex)
+  
   const mediaRecorderRef = useRef(null);
   const timeoutRef = useRef(null);
 
   useEffect(() => {
     // Reset transcription when question changes
     setTranscription('');
-  }, [currentQuestionIndex]);
+  }, [currentQuestionIndex, currentQuestionSetIndex]);
+
 
   const toggleRecording = () => {
     if (!recording) {
@@ -34,6 +37,8 @@ function AudioTranscription({prompt}) {
         setRecording(true);
         const audioChunks = [];
 
+        setCurrentQuestionIndex((prevIndex) => (prevIndex + 1) % questionSet[currentQuestionSetIndex].questions.length);
+
         mediaRecorder.ondataavailable = (event) => {
           audioChunks.push(event.data);
         };
@@ -43,7 +48,7 @@ function AudioTranscription({prompt}) {
           setAudioBlob(audioBlob);
           stream.getTracks().forEach(track => track.stop());
           // Move to the next question after stopping the recording
-          setCurrentQuestionIndex((prevIndex) => (prevIndex + 1) % questions.length);
+          
         };
 
         timeoutRef.current = setTimeout(() => {
@@ -85,7 +90,7 @@ function AudioTranscription({prompt}) {
 
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
-      <h2>{questions[currentQuestionIndex]}</h2>
+      <h2>{questionSet[currentQuestionSetIndex].questions[currentQuestionIndex]}</h2>
       <button onClick={toggleRecording} style={{ backgroundColor: '#4CAF50', color: 'white', margin: '10px', padding: '10px 20px', border: 'none', borderRadius: '5px' }}>
         {recording ? 'Stop Recording' : 'Start Recording'}
       </button>
@@ -97,7 +102,7 @@ function AudioTranscription({prompt}) {
         <p>{transcription || 'No transcription available.'}</p>
         {error && <p style={{ color: 'red' }}>Error: {error}</p>}
       </div>
-      <GPTResponse transcript={transcription} prompt={questions[currentQuestionIndex]}/>
+      <GPTResponse transcript={transcription} prompt={questionSet[currentQuestionSetIndex].questions[currentQuestionIndex]}/>
     </div>
   );
 }
