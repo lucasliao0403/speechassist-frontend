@@ -20,16 +20,16 @@ function GPTResponse({ transcript, prompt }) {
 
     return (
         <div>
-            <button onClick={getGPT} style={{
-                backgroundColor: '#021CBA', color: 'white', margin: '10px', padding: '10px 20px',
-                border: 'none', borderRadius: '5px'
-            }}>
-                Get Response
-            </button>
+            <div className="flex justify-center ">
+                {!GPTresponse && <button onClick={getGPT} className="text-xl font-bold hover:bg-blue-600 bg-blue-700 text-white mt-4 px-8 py-4 rounded-xl">
+                    Get Feedback!
+                </button>}
+            </div>
             <div style={{ color: 'red' }}>{error}</div>
-            <div className="w-[700px] border-gray-600 bg-slate-100 border-solid border-4 p-4 rounded-xl drop-shadow-xl h-[300px] overflow-scroll">
-                {GPTresponse ? GPTresponse : 'No response yet.'}
-            </div> 
+            <div className="mt-4  border-gray-600 bg-slate-100 border-solid border-4 p-4 rounded-xl drop-shadow-xl h-[300px] overflow-y-scroll">
+                { GPTresponse? {GPTresponse}: <div> Click the feedback button!</div>}
+            </div>
+            
         </div>
     );
 }
