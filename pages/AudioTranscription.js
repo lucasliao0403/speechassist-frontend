@@ -31,7 +31,7 @@ function AudioTranscription() {
         };
 
         mediaRecorder.onstop = () => {
-          const audioBlob = new Blob(audioChunks);
+            const audioBlob = new Blob(audioChunks);
           setAudioBlob(audioBlob);
           stream.getTracks().forEach(track => track.stop());  
         };
@@ -59,10 +59,11 @@ function AudioTranscription() {
   const handleTranscribeAudio = () => {
     const formData = new FormData();
     formData.append('audio', audioBlob, 'userAudio.wav'); 
-
+    console.log("handled transcribing")
     axios.post('http://localhost:3000/transcribe', formData, {
-        headers: {
-        },
+        body: {
+           formData
+        }
     })
     .then(response => {
         setTranscription(response.data.text);
@@ -79,7 +80,7 @@ function AudioTranscription() {
       <button onClick={toggleRecording}>
         {recording ? 'Stop Recording' : 'Start Recording'}
       </button>
-      <button onClick={handleTranscribeAudio} disabled={!audioBlob || recording}>
+      <button onClick={handleTranscribeAudio} >
         Transcribe
       </button>
       <div>
