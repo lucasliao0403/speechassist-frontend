@@ -99,7 +99,7 @@ function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionInd
       
       <div>
         <h3>Transcription:</h3>
-        <div className="w-96 border-gray-600 bg-slate-100 border-solid border-4 p-4 rounded-xl drop-shadow-xl">
+        <div className=" border-gray-600 bg-slate-100 border-solid border-4 p-4 rounded-xl drop-shadow-xl h-[200px] overflow-scroll">
           <p>{transcription || 'No transcription available.'}</p>
           {error && <p style={{ color: 'red' }}>Error: {error}</p>}
         </div>

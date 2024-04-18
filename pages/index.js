@@ -15,6 +15,8 @@ const videoConstraints = {
 
 export default function Home() {
 
+  const [pageNum, setPageNum] = useState(0)
+
   const [permission, setPermission] = useState(false);
   const [stream, setStream] = useState(null);
 
@@ -40,26 +42,59 @@ export default function Home() {
 
   const webRef = useRef(null)
   return (
-    <div className="flex flex-row">
-      <div className="w-[50vw] flex justify-center items-center">
-          <div className="text-black font-bold p-8 h-full flex flex-col justify-center align-center mt-16 mx-16">
+    <div className="flex flex-row justify-center">
+      <div className=" flex justify-center mt-8">
+        {pageNum==0 && <div className="text-black font-bold p-8 h-full flex flex-col justify-center align-center mt-16 mx-16">
             <h1 className="text-left text-6xl mb-2"> Welcome to <br/> <span className="text-pink-400">Interview Assistant!</span></h1>
             <h2 className="text-xl mb-16 font-normal"> Please select an interview problem set below.</h2>
             <QuestionSelect
             currentQuestionSetIndex={currentQuestionSetIndex}
             setCurrentQuestionSetIndex={setCurrentQuestionSetIndex}
             />
+            <div className="flex justify-center w-full">
+              <div className="flex justify-center text-white w-72 cursor-pointer rounded-xl text-center px-4 py-2 mt-8 bg-red-400 hover:bg-red-300" onClick = {() => setPageNum(1)}> Begin </div>
+            </div>
+            
+          </div>}
+        
+        {pageNum==1 && 
+        <div>
+          <div>
+            {questionSet[currentQuestionSetIndex].questions[currentQuestionIndex]}
           </div>
+          show avatar
+          <div className="flex flex-row gap-4">
+            <div className="flex justify-center text-white w-72 cursor-pointer rounded-xl text-center px-4 py-2 mt-4 bg-red-400 hover:bg-red-300" onClick = {() => setPageNum(0)}> Go back</div>
+            
+            <div className="flex justify-center text-white w-72 cursor-pointer rounded-xl text-center px-4 py-2 mt-4 bg-red-400 hover:bg-red-300" onClick = {() => setPageNum(2)}> Continue </div>
+            </div>
+          </div>}
+
+          {pageNum==2 && 
+        <div>
+          <div>
+            {questionSet[currentQuestionSetIndex].questions[currentQuestionIndex]}
+          </div>
+          show webcam / record here
+          <div className="flex flex-row gap-4">      
+            <div className="flex justify-center text-white w-72 cursor-pointer rounded-xl text-center px-4 py-2 mt-4 bg-red-400 hover:bg-red-300" onClick = {() => setPageNum(3)}> Continue </div>
+            </div>
+          </div>}
+          
       </div>
-        <div className="max-w-[50vw]">
+      {pageNum == 3 && <div className="">
           {/* {console.log(currentQuestionIndex)} */}
           <AudioTranscription 
           currentQuestionIndex={currentQuestionIndex}
           currentQuestionSetIndex={currentQuestionSetIndex}
           setCurrentQuestionIndex={setCurrentQuestionIndex}
           setCurrentQuestionSetIndex={setCurrentQuestionSetIndex}
-          />
+          />       
+            <div className="flex justify-center text-white w-72 cursor-pointer rounded-xl text-center px-4 py-2 mt-4 bg-red-400 hover:bg-red-300" onClick = {() => setPageNum(0)}> Finish </div>
         </div>
+        
+        }
+        
         
 
     </div>
