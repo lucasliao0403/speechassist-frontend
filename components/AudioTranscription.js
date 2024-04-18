@@ -8,8 +8,7 @@ function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionInd
   const [audioBlob, setAudioBlob] = useState(null);
   const [transcription, setTranscription] = useState('');
   const [error, setError] = useState('');
-  
-  console.log(currentQuestionIndex)
+
   
   const mediaRecorderRef = useRef(null);
   const timeoutRef = useRef(null);

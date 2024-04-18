@@ -5,6 +5,7 @@ import {useState, useRef} from 'react'
 import Webcam from "react-webcam";
 import AudioTranscription from '@/components/AudioTranscription'; 
 import { questionSet } from "@/assets/data.js";
+import QuestionSelect from "@/components/QuestionSelect";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,10 +44,11 @@ export default function Home() {
       <div className="max-w-[40vw] flex justify-center items-center">
         <div className=" text-black font-bold p-8">
             <div>
-              <h1 className="text-3xl"> Welcome to <span className="text-pink-400">Interview Assistant!</span></h1>
-              <div className="flex flex-row">
-
-              </div>
+              <h1 className="text-3xl mb-16"> Welcome to <span className="text-pink-400">Interview Assistant!</span></h1>
+              <QuestionSelect
+              currentQuestionSetIndex={currentQuestionSetIndex}
+              setCurrentQuestionSetIndex={setCurrentQuestionSetIndex}
+              />
             </div>
         </div>
       </div>
