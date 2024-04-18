@@ -31,6 +31,8 @@ export default function Home() {
   const [transcription, setTranscription] = useState('');
   const [error, setError] = useState('');
 
+  // console.log(currentQuestionIndex)
+
   // const[videoPath, setVideoPath] = useState("@/assets/videos/uoft/uoftq1.mp4")
   
   const mediaRecorderRef = useRef(null);

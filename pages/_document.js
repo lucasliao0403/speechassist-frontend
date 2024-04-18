@@ -5,7 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="bg-white text-gray-800">
+      <body className="bg-gradient-to-br from-white to-indigo-200 text-gray-800">
         <Navbar/>
         <Main />
         <NextScript />

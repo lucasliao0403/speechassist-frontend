@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function About() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-gray-100 text-gray-800">
-      <div className="bg-white shadow-xl rounded-lg p-8 m-4 w-full max-w-4xl">
+      <div className="bg-white shadow-xl rounded-2xl p-8 m-4 w-full max-w-4xl">
         <h1 className="text-4xl font-bold text-center mb-4">About Us</h1>
         <p className="text-xl text-center mb-8">
           Welcome to SpeechAssist, where we empower you to excel in your interviews through dedicated practice and real-time feedback.
