@@ -170,7 +170,7 @@ export const questionSet = [
         "title": "Use my own questions.",
         "questions": [
             {
-                "text": "Record an answer to your own question",
+                "text": "Record an answer to your own question, please state your question at the start of your answer.",
                 "video": "/videos/selfquestion.mp4"
             }
         ]
