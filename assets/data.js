@@ -1,46 +1,56 @@
 export const questionSet = [
-        {
-            "index": 0,
-            "title": "Waterloo Engineering",
-            "questions": [
-                "What motivated you to choose Waterloo Engineering over other programs?",
-                "Can you describe a project or experience where you demonstrated innovation?",
-                "What are your career aspirations and how does Waterloo Engineering fit into these plans?",
-                "How do you handle challenging situations, especially in collaborative projects?"
-            ]
-        },
-    
-        {
-            "index": 1,
-            "title": "McMaster Engineering",
-            "questions": [
-                "Why are you interested in pursuing your engineering education at McMaster?",
-                "Discuss an engineering challenge you have faced and how you overcame it.",
-                "How do you see yourself contributing to the McMaster Engineering community?",
-                "What skills or experiences make you a strong candidate for this program?"
-            ]
-        },
-    
-        {
-            "index": 2,
-            "title": "University of Toronto Engineering",
-            "questions": [
-                "What aspects of the University of Toronto Engineering program appeal to you the most?",
-                "Describe a time when you had to apply your engineering knowledge to solve a practical problem.",
-                "How do you plan to utilize the resources at U of T Engineering to achieve your professional goals?",
-                "In what ways do you think you can contribute to the diverse environment at U of T?"
-            ]
-        },
-    
-        {
-            "index": 3,
-            "title": "Ryerson Engineering",
-            "questions": [
-                "Why did you choose Ryerson's engineering program?",
-                "Provide an example of a technical problem you solved and the steps you took to solve it.",
-                "What do you expect to gain from your time at Ryerson Engineering?",
-                "How do you plan to engage with the Ryerson community outside of the classroom?"
-            ]
-        }
-    
+    {
+        "index": 0,
+        "title": "Waterloo Computer Science",
+        "questions": [
+            "What inspired you to pursue Computer Science, specifically at Waterloo?",
+            "Discuss a complex problem you solved using programming.",
+            "How do you stay updated with current technologies and trends in software development?",
+            "What are your long-term career goals and how will Waterloo help you achieve them?"
+        ]
+    },
+
+    {
+        "index": 1,
+        "title": "McMaster Health Sciences",
+        "questions": [
+            "Why do you want to study Health Sciences at McMaster?",
+            "Can you share an experience where you demonstrated empathy in a healthcare setting?",
+            "What role do you see technology playing in the future of healthcare?",
+            "How do you handle stress, particularly in high-stakes environments like healthcare?"
+        ]
+    },
+
+    {
+        "index": 2,
+        "title": "University of Toronto Law",
+        "questions": [
+            "What draws you to a career in law, and why U of T specifically?",
+            "Describe a legal issue you are passionate about and how you would advocate for change.",
+            "How do you approach ethical dilemmas, and could you provide an example?",
+            "What are your professional aspirations in law and how does U of T fit into these plans?"
+        ]
+    },
+
+    {
+        "index": 3,
+        "title": "Western Business",
+        "questions": [
+            "Why did you choose Western University's business program?",
+            "Talk about a time when you had to lead a team under pressure.",
+            "How do you assess and handle business risks?",
+            "Discuss a business case you found particularly insightful or challenging."
+        ]
+    },
+
+    {
+        "index": 4,
+        "title": "Queen's Commerce",
+        "questions": [
+            "What attracts you to the Commerce program at Queen's University?",
+            "Describe an entrepreneurial project you have initiated or been involved with.",
+            "How do you plan to use your education at Queen's to impact the business world?",
+            "Discuss how you've adapted to a significant change or challenge in a team setting."
+        ]
+    }
 ]
