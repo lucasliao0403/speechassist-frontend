@@ -50,6 +50,14 @@ export default function Home() {
     }
   };
 
+  function randomQuestion() {
+    let a = questionSet[currentQuestionSetIndex].questions.length
+    let b = Math.floor(Math.random()*(a+1))
+    console.log("random question:")
+    console.log(b)
+    return b
+  }
+
   const startRecording = () => {
     console.log("start recording")
     navigator.mediaDevices.getUserMedia({ audio: true })
@@ -135,7 +143,7 @@ export default function Home() {
   return (
     <div className="flex flex-row justify-center">
       <div className=" flex justify-center mt-8">
-        {pageNum==0 && <div className="text-black font-bold p-8 h-full flex flex-col justify-center align-center mt-16 mx-16 max-w-[60vw]">
+        {pageNum==0 && <div className="text-black font-bold p-8 h-full flex flex-col justify-center align-center mx-16 max-w-[60vw]">
             <div className="flex flex-row gap-16"> 
               <div>
                 <h1 className="text-left text-6xl mb-2"> Welcome to <br/> <span className="text-pink-400">SpeechAssist!</span></h1>
@@ -155,7 +163,7 @@ export default function Home() {
             setCurrentQuestionSetIndex={setCurrentQuestionSetIndex}
             />
             <div className="flex justify-center w-full">
-              <div className="flex justify-center text-white w-72 cursor-pointer rounded-xl text-center px-4 py-2 mt-8 bg-red-400 hover:bg-red-300" onClick = {() => setPageNum(1)}> Begin </div>
+              <div className="flex justify-center text-white w-72 cursor-pointer rounded-xl text-center px-4 py-2 mt-8 bg-red-400 hover:bg-red-300" onClick = {() => {setPageNum(1); setCurrentQuestionIndex(randomQuestion())}}> Begin </div>
             </div>
             
           </div>}
