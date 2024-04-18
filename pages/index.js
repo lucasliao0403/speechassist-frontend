@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import AudioRecorder from "@/components/AudioRecorder";
 import {useState, useRef} from 'react'
 import Webcam from "react-webcam";
-import AudioTranscription from './AudioTranscription'; 
+import AudioTranscription from '@/components/AudioTranscription'; 
 
 const inter = Inter({ subsets: ["latin"] });
 

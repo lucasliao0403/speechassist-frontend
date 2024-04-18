@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';
+import GPTResponse from './GPTResponse.js';
 
 function AudioTranscription() {
   const [recording, setRecording] = useState(false);
@@ -41,6 +42,9 @@ function AudioTranscription() {
             stopRecording();
           }
         }, 60000);  // 1 minute
+
+        // TODO: ADD STOPWATCH -------------------------------------------------------------------------
+
       })
       .catch(e => {
         setError('Could not access microphone. Please ensure it is not in use by another application.');
@@ -84,11 +88,13 @@ function AudioTranscription() {
       <button onClick={handleTranscribeAudio} >
         Transcribe
       </button>
-      <div>
+      <div className="p-4">
         <h3>Transcription:</h3>
         <p>{transcription || 'No transcription available.'}</p>
         {error && <p>Error: {error}</p>}
       </div>
+      
+      <GPTResponse transcript={transcription}/>
     </div>
   );
 }
