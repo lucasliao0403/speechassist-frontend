@@ -8,7 +8,7 @@ function GPTResponse({ transcript, prompt }) {
     const getGPT = () => {
         axios.post('http://localhost:3000/chatgpt', { transcript, prompt })
         .then(response => {
-            console.log("GPT Response:", response.data);
+            console.log("GPT Response:", response.data); 
             const textResponse = response.data.choices[0].message.content; // Adjust according to your response structure
             setGPTResponse(textResponse); // Adjust according to the actual structure of the response
         })

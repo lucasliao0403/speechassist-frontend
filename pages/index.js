@@ -58,7 +58,8 @@ export default function Home() {
         setRecording(true);
         const audioChunks = [];
 
-        setCurrentQuestionIndex((prevIndex) => (prevIndex + 1) % questionSet[currentQuestionSetIndex].questions.length);
+        
+        // setCurrentQuestionIndex((prevIndex) => (prevIndex + 1) % questionSet[currentQuestionSetIndex].questions.length);
 
         mediaRecorder.ondataavailable = (event) => {
           audioChunks.push(event.data);
