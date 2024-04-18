@@ -16,7 +16,7 @@ export default function Home() {
         <h1>React Media Recorder</h1>
         
         <div className="flex flex-row justify-center">
-           <AudioRecorder />
+          <AudioRecorder />
         </div>
     </div>
   );
