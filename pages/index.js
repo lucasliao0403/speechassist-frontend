@@ -41,16 +41,15 @@ export default function Home() {
   const webRef = useRef(null)
   return (
     <div className="flex flex-row">
-      <div className="max-w-[40vw] flex justify-center items-center">
-        <div className=" text-black font-bold p-8">
-            <div>
-              <h1 className="text-3xl mb-16"> Welcome to <span className="text-pink-400">Interview Assistant!</span></h1>
-              <QuestionSelect
-              currentQuestionSetIndex={currentQuestionSetIndex}
-              setCurrentQuestionSetIndex={setCurrentQuestionSetIndex}
-              />
-            </div>
-        </div>
+      <div className="w-[50vw] flex justify-center items-center">
+          <div className="text-black font-bold p-8 h-full flex flex-col justify-center align-center mt-16 mx-16">
+            <h1 className="text-left text-6xl mb-2"> Welcome to <br/> <span className="text-pink-400">Interview Assistant!</span></h1>
+            <h2 className="text-xl mb-16 font-normal"> Please select an interview problem set below.</h2>
+            <QuestionSelect
+            currentQuestionSetIndex={currentQuestionSetIndex}
+            setCurrentQuestionSetIndex={setCurrentQuestionSetIndex}
+            />
+          </div>
       </div>
         <div className="">
           {/* {console.log(currentQuestionIndex)} */}
