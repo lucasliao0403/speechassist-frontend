@@ -133,8 +133,20 @@ export default function Home() {
     <div className="flex flex-row justify-center">
       <div className=" flex justify-center mt-8">
         {pageNum==0 && <div className="text-black font-bold p-8 h-full flex flex-col justify-center align-center mt-16 mx-16">
-            <h1 className="text-left text-6xl mb-2"> Welcome to <br/> <span className="text-pink-400">Interview Assistant!</span></h1>
-            <h2 className="text-xl mb-16 font-normal"> Please select an interview problem set below.</h2>
+            <div className="flex flex-row gap-16"> 
+              <div>
+                <h1 className="text-left text-6xl mb-2"> Welcome to <br/> <span className="text-pink-400">SpeechAssist!</span></h1>
+                <h2 className="text-xl mb-16 font-normal"> Please select an interview problem set below.</h2>
+              </div>
+              <div> 
+                  <Image 
+                  src={require("@/assets/logo.png")}
+                  width={150}
+                  height={150}
+                  
+                  />
+              </div>
+            </div>
             <QuestionSelect
             currentQuestionSetIndex={currentQuestionSetIndex}
             setCurrentQuestionSetIndex={setCurrentQuestionSetIndex}
