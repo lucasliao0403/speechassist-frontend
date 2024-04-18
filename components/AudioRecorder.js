@@ -61,7 +61,6 @@ const AudioRecorder = () => {
     };
     return (
         <div className="p-16">
-            <h2 className="text-center">Audio Recorder</h2>
             <main>
                 <div className="">
                     {!permission ? (

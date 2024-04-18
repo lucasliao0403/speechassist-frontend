@@ -2,6 +2,9 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import AudioRecorder from "@/components/AudioRecorder";
 import {useState} from 'react'
+import Webcam from "react-webcam";
+
+const WebcamComponent = () => <Webcam />;
 
 const inter = Inter({ subsets: ["latin"] });
 
