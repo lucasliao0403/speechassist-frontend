@@ -61,11 +61,12 @@ function AudioTranscription() {
     formData.append('audio', audioBlob, 'userAudio.wav'); 
     console.log("handled transcribing")
     axios.post('http://localhost:3000/transcribe', formData, {
-        body: {
-           formData
-        }
+    headers: {
+        'Content-Type': 'multipart/form-data'
+    }
     })
     .then(response => {
+        console.log(response);
         setTranscription(response.data.text);
     })
     .catch(error => {
