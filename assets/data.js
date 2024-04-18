@@ -52,5 +52,36 @@ export const questionSet = [
             "How do you plan to use your education at Queen's to impact the business world?",
             "Discuss how you've adapted to a significant change or challenge in a team setting."
         ]
+    },
+    {
+        "index": 5,
+        "title": "Electrician Apprenticeship",
+        "questions": [
+            "Why do you want to pursue a career as an electrician?",
+            "Can you describe a time when you successfully diagnosed and fixed an electrical problem?"
+        ]
+    },
+
+    {
+        "index": 6,
+        "title": "General Interview Questions",
+        "questions": [
+            "Tell us about yourself and your background.",
+            "What are your strengths and weaknesses?",
+            "Where do you see yourself in five years?",
+            "Can you describe a challenging situation you've faced and how you dealt with it?",
+            "Why do you want to work for our organization?",
+            "What motivates you to do your best work?",
+            "How do you handle stress and pressure?",
+            "What has been your greatest accomplishment?",
+            "Why should we hire you over other candidates?",
+        ]
+    },
+    {
+        "index": 7,
+        "title": "Use my own questions.",
+        "questions":[
+            "Record an answer to your own question"
+        ]
     }
 ]
