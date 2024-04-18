@@ -165,4 +165,14 @@ export const questionSet = [
             }
         ]
     },
+    {
+        "index": 7,
+        "title": "Use my own questions.",
+        "questions": [
+            {
+                "text": "Record an answer to your own question",
+                "video": "/videos/selfquestion.mp4"
+            }
+        ]
+    }
 ]
