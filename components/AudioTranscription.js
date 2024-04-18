@@ -91,7 +91,7 @@ function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionInd
   };
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
+    <div className="p-4">
       <h2>{questionSet[currentQuestionSetIndex].questions[currentQuestionIndex]}</h2>
       <button onClick={toggleRecording} className="bg-red-400 text-white py-2 px-4 rounded-xl hover:bg-red-300">
         {recording ? 'Stop Recording' : 'Start Recording'}
@@ -99,8 +99,11 @@ function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionInd
       
       <div>
         <h3>Transcription:</h3>
-        <p>{transcription || 'No transcription available.'}</p>
-        {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+        <div className="w-96 border-gray-600 bg-slate-100 border-solid border-4 p-4 rounded-xl drop-shadow-xl">
+          <p>{transcription || 'No transcription available.'}</p>
+          {error && <p style={{ color: 'red' }}>Error: {error}</p>}
+        </div>
+        
       </div>
       <GPTResponse transcript={transcription} prompt={questionSet[currentQuestionSetIndex].questions[currentQuestionIndex]}/>
     </div>

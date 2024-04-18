@@ -51,7 +51,7 @@ export default function Home() {
             />
           </div>
       </div>
-        <div className="">
+        <div className="max-w-[50vw]">
           {/* {console.log(currentQuestionIndex)} */}
           <AudioTranscription 
           currentQuestionIndex={currentQuestionIndex}

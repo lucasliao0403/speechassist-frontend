@@ -27,7 +27,9 @@ function GPTResponse({ transcript, prompt }) {
                 Get Response
             </button>
             <div style={{ color: 'red' }}>{error}</div>
-            <div>Response: {GPTresponse ? GPTresponse : 'No response yet.'}</div> 
+            <div className="w-96 border-gray-600 bg-slate-100 border-solid border-4 p-4 rounded-xl drop-shadow-xl h-[300px] overflow-scroll">
+                {GPTresponse ? GPTresponse : 'No response yet.'}
+            </div> 
         </div>
     );
 }
