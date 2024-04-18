@@ -49,7 +49,7 @@ export const questionSet = [
         "questions": [
             {
                 "text": "What draws you to a career in law, and why U of T specifically?",
-                "video": "./assets/videos/uoft/uoftq1.mp4"
+                "video": "@/assets/videos/uoft/uoftq1.mp4"
             },
             {
                 "text": "Describe a legal issue you are passionate about and how you would advocate for change.",

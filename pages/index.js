@@ -7,6 +7,8 @@ import AudioTranscription from '@/components/AudioTranscription';
 import { questionSet } from "@/assets/data.js";
 import QuestionSelect from "@/components/QuestionSelect";
 import axios from 'axios'
+import React from 'react'
+// import vid from '@/assets/videos/uoft/uoftq1.mp4'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +23,6 @@ export default function Home() {
   const [permission, setPermission] = useState(false);
   const [stream, setStream] = useState(null);
   
-
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [currentQuestionSetIndex, setCurrentQuestionSetIndex] = useState(0);
 
@@ -30,6 +31,7 @@ export default function Home() {
   const [transcription, setTranscription] = useState('');
   const [error, setError] = useState('');
 
+  // const[videoPath, setVideoPath] = useState("@/assets/videos/uoft/uoftq1.mp4")
   
   const mediaRecorderRef = useRef(null);
   const timeoutRef = useRef(null);
@@ -58,7 +60,7 @@ export default function Home() {
         setRecording(true);
         const audioChunks = [];
 
-        
+
         // setCurrentQuestionIndex((prevIndex) => (prevIndex + 1) % questionSet[currentQuestionSetIndex].questions.length);
 
         mediaRecorder.ondataavailable = (event) => {
@@ -165,7 +167,7 @@ export default function Home() {
           </div>
           <div>
             <video width="720" controls>
-              <source src={questionSet[currentQuestionSetIndex].questions[currentQuestionIndex].video} type="video/mp4" />
+              <source src={'/videos/uoft/uoftq1.mp4'} type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
           </div>
