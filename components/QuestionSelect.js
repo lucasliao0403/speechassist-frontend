@@ -6,7 +6,7 @@ import { questionSet } from '@/assets/data'
 export default function QuestionSelect({currentQuestionSetIndex, setCurrentQuestionSetIndex}) {
     console.log(currentQuestionSetIndex)
     return (
-        <div className="flex flex-row gap-4 justify-left">
+        <div className="flex flex-row gap-4 justify-left flex-wrap">
             {questionSet.map((questionGroup) => 
             <QuestionCard questionGroup = {questionGroup} 
             setCurrentQuestionSetIndex={setCurrentQuestionSetIndex} 
