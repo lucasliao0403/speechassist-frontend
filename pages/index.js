@@ -8,7 +8,6 @@ import { questionSet } from "@/assets/data.js";
 import QuestionSelect from "@/components/QuestionSelect";
 import axios from 'axios'
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 const videoConstraints = {
@@ -149,9 +148,14 @@ export default function Home() {
         {pageNum==1 && 
         <div>
           <div>
-            {questionSet[currentQuestionSetIndex].questions[currentQuestionIndex]}
+            {questionSet[currentQuestionSetIndex].questions[currentQuestionIndex].text}
           </div>
-          show avatar
+          <div>
+            <video width="720" controls>
+              <source src={questionSet[currentQuestionSetIndex].questions[currentQuestionIndex].video} type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+          </div>
           <div className="flex flex-row gap-4">
             <div className="flex justify-center text-white w-72 cursor-pointer rounded-xl text-center px-4 py-2 mt-4 bg-red-400 hover:bg-red-300" onClick = {() => setPageNum(0)}> Go back</div>
             
