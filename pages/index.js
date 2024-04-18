@@ -166,8 +166,8 @@ export default function Home() {
             {questionSet[currentQuestionSetIndex].questions[currentQuestionIndex].text}
           </div>
           <div>
-            <video width="720" controls>
-              <source src={'/videos/uoft/uoftq1.mp4'} type="video/mp4" />
+            <video width="720" controls autoPlay>
+              <source src={questionSet[currentQuestionSetIndex].questions[currentQuestionIndex].video} type="video/mp4" auto/>
                 Your browser does not support the video tag.
             </video>
           </div>
