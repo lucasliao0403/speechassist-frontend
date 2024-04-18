@@ -81,21 +81,21 @@ function AudioTranscription() {
 
 
   return (
-    <div>
-      <button onClick={toggleRecording}>
+
+    <div style={{ textAlign: 'center', padding: '20px' }}>
+      <button onClick={toggleRecording} style={{ backgroundColor: '#4CAF50', color: 'white', margin: '10px', padding: '10px 20px', border: 'none', borderRadius: '5px' }}>
         {recording ? 'Stop Recording' : 'Start Recording'}
       </button>
-      <button onClick={handleTranscribeAudio} >
+      <button onClick={handleTranscribeAudio} style={{ backgroundColor: '#008CBA', color: 'white', margin: '10px', padding: '10px 20px', border: 'none', borderRadius: '5px' }}>
         Transcribe
       </button>
-      <div className="p-4">
+      <div>
         <h3>Transcription:</h3>
         <p>{transcription || 'No transcription available.'}</p>
-        {error && <p>Error: {error}</p>}
+        {error && <p style={{ color: 'red' }}>Error: {error}</p>}
       </div>
-      
       <GPTResponse transcript={transcription}/>
-    </div>
+      </div>  
   );
 }
 
