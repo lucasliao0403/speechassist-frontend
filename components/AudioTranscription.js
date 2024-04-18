@@ -5,7 +5,7 @@ import {questionSet} from '@/assets/data.js'
 
 function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionIndex, currentQuestionSetIndex, setCurrentQuestionSetIndex}) {
   const [recording, setRecording] = useState(false);
-  const [audioBlob, setAudioBlob] = useState(null);
+  const audioBlobRef = useRef(null);
   const [transcription, setTranscription] = useState('');
   const [error, setError] = useState('');
 
@@ -28,6 +28,7 @@ function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionInd
   };
 
   const startRecording = () => {
+    console.log("start recording")
     navigator.mediaDevices.getUserMedia({ audio: true })
       .then(stream => {
         const mediaRecorder = new MediaRecorder(stream);
@@ -44,10 +45,10 @@ function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionInd
 
         mediaRecorder.onstop = () => {
           const audioBlob = new Blob(audioChunks);
-          setAudioBlob(audioBlob);
+          audioBlobRef.current = audioBlob;
           stream.getTracks().forEach(track => track.stop());
-          // Move to the next question after stopping the recording
-          
+          console.log(audioBlobRef.current)
+          handleTranscribeAudio();
         };
 
         timeoutRef.current = setTimeout(() => {
@@ -63,6 +64,7 @@ function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionInd
   };
 
   const stopRecording = () => {
+    console.log("stop recording")
     if (mediaRecorderRef.current) {
       mediaRecorderRef.current.stop();
       clearTimeout(timeoutRef.current);
@@ -70,9 +72,10 @@ function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionInd
     }
   };
 
-  const handleTranscribeAudio = () => {
+  function handleTranscribeAudio() {
+    console.log("transcribe audio")
     const formData = new FormData();
-    formData.append('audio', audioBlob, 'userAudio.wav');
+    formData.append('audio', audioBlobRef.current, 'userAudio.wav');
     axios.post('http://localhost:3000/transcribe', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
@@ -90,12 +93,10 @@ function AudioTranscription({prompt, currentQuestionIndex, setCurrentQuestionInd
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
       <h2>{questionSet[currentQuestionSetIndex].questions[currentQuestionIndex]}</h2>
-      <button onClick={toggleRecording} style={{ backgroundColor: '#4CAF50', color: 'white', margin: '10px', padding: '10px 20px', border: 'none', borderRadius: '5px' }}>
+      <button onClick={toggleRecording} className="bg-red-400 text-white py-2 px-4 rounded-xl hover:bg-red-300">
         {recording ? 'Stop Recording' : 'Start Recording'}
       </button>
-      <button onClick={handleTranscribeAudio} disabled={!audioBlob || recording} style={{ backgroundColor: '#008CBA', color: 'white', margin: '10px', padding: '10px 20px', border: 'none', borderRadius: '5px' }}>
-        Transcribe
-      </button>
+      
       <div>
         <h3>Transcription:</h3>
         <p>{transcription || 'No transcription available.'}</p>
