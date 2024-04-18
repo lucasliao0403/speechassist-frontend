@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 import GPTResponse from './GPTResponse.js';
 
-function AudioTranscription() {
+function AudioTranscription({prompt}) {
   const [recording, setRecording] = useState(false);
   const [audioBlob, setAudioBlob] = useState(null);
   const [transcription, setTranscription] = useState('');
@@ -97,7 +97,7 @@ function AudioTranscription() {
         <p>{transcription || 'No transcription available.'}</p>
         {error && <p style={{ color: 'red' }}>Error: {error}</p>}
       </div>
-      <GPTResponse transcript={transcription}/>
+      <GPTResponse transcript={transcription} prompt={questions[currentQuestionIndex]}/>
     </div>
   );
 }

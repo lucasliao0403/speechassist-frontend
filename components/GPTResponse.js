@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-function GPTResponse({ transcript }) {
+function GPTResponse({ transcript, prompt }) {
     const [GPTresponse, setGPTResponse] = useState('');
     const [error, setError] = useState('');
 
     const getGPT = () => {
-        axios.post('http://localhost:3000/chatgpt', { transcript })
+        axios.post('http://localhost:3000/chatgpt', { transcript, prompt })
         .then(response => {
             console.log("GPT Response:", response.data);
             const textResponse = response.data.choices[0].message.content; // Adjust according to your response structure
