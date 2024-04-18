@@ -67,7 +67,7 @@ function AudioTranscription() {
     })
     .then(response => {
         console.log(response);
-        setTranscription(response.data.text);
+        setTranscription(response.data);
     })
     .catch(error => {
         setError('Error transcribing audio.');
