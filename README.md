@@ -66,20 +66,9 @@ Interviews can be intimidating, especially for students preparing for university
 
 ---
 
-## 📸 **Screenshots**  
-
-| **Home Screen** 🏠  | **Video Feedback** 🎥  | **Transcription & Analysis** 📝 |  
-|---------------------|-----------------------|---------------------------------|  
-| ![Home Screen](https://via.placeholder.com/150) | ![Video Feedback](https://via.placeholder.com/150) | ![Analysis](https://via.placeholder.com/150) |  
-
----
-
 ## 🤝 **Team**  
 
-- **Lucas Liao**: Full-stack Development  
-- **Teammate 1**: AI Integration & Backend  
-- **Teammate 2**: UI/UX Design  
-- **Teammate 3**: Testing & Deployment  
+**Lucas Liao, [Adam Wang](https://github.com/YeIIcw) **
 
 ---
 
