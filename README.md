@@ -1,5 +1,6 @@
 
 # [Backend Repo](https://github.com/lucasliao0403/speechassist-backend)
+# Built with [Adam Wang](https://github.com/YeIIcw)
 
 # SpeechAssist 🎤🤖  
 
@@ -63,12 +64,6 @@ Interviews can be intimidating, especially for students preparing for university
 - **💬 Expanded Question Bank**: Add more diverse and challenging questions.  
 - **🌍 Accessibility**: Optimize for non-native English speakers.  
 - **📱 Mobile Support**: Build a mobile app for on-the-go practice.  
-
----
-
-## 🤝 **Team**  
-
-**Lucas Liao, [Adam Wang](https://github.com/YeIIcw) **
 
 ---
 
